@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* root */
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
 
 Route::get('/dashboard', function () {
