@@ -46,7 +46,8 @@
     }
   }
   &__text-field,
-  &__pass-field {
+  &__pass-field,
+  &__email-field {
     @include set-border(1px, solid, #e6e6e6);
     width: 100%;
     font-size: 1.4rem;
@@ -76,6 +77,5 @@
     font-size: 1.4rem;
     text-decoration: underline;
     width: fit-content;
-    margin: 0 auto;
   }
 }

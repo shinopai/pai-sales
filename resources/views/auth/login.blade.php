@@ -8,7 +8,7 @@
         <!-- メールアドレス -->
         <div class="form__item">
             <x-input-label for="email" :value="__('メールアドレス')" class="form__label" /><br>
-            <x-text-input id="email" class="form__text-field" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+            <x-text-input id="email" class="form__email-field" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
             <x-input-error :messages="$errors->get('email')" class="form__err-msg" />
         </div>
 
