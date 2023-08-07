@@ -22,3 +22,60 @@
     }
   }
 }
+
+/* フォーム */
+.form {
+  width: min(100%, 550px);
+  margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 3px 3px 5px 0px rgba(232, 232, 232, 1);
+  padding: 25px;
+  &__item {
+    margin-bottom: 15px;
+    &.flex {
+      justify-content: space-between;
+      align-items: center;
+    }
+  }
+  &__label {
+    font-size: 1.2rem;
+    color: #96908a;
+    span {
+      color: inherit;
+      vertical-align: 2px;
+    }
+  }
+  &__text-field,
+  &__pass-field {
+    @include set-border(1px, solid, #e6e6e6);
+    width: 100%;
+    font-size: 1.4rem;
+    background-color: #fbfbfb;
+    padding: 0.3em 0.5em;
+  }
+  &__submit {
+    background-color: #0083ba;
+    color: #fff;
+    border-radius: 5px;
+    border: none;
+    width: 140px;
+    font-size: 1.4rem;
+    padding: 0.3em 0;
+    cursor: pointer;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &__err-msg {
+    font-size: 1.2rem;
+    li {
+      color: #fb3b3b;
+    }
+  }
+  &__link {
+    font-size: 1.4rem;
+    text-decoration: underline;
+    width: fit-content;
+    margin: 0 auto;
+  }
+}
