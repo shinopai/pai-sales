@@ -79,3 +79,48 @@
     width: fit-content;
   }
 }
+
+/* ヘッダー */
+.header {
+  background-color: #f8f8f8;
+  height: 50px;
+  &__inner {
+    justify-content: flex-start;
+    align-items: center;
+    column-gap: 170px;
+  }
+  &__heading {
+    font-size: 2rem;
+    font-weight: normal;
+  }
+  &-nav {
+    height: 50px;
+    align-items: center;
+    font-size: 1.4rem;
+    &__item {
+      padding: 0 2em;
+      color: #8a8686;
+      height: 100%;
+      @include centering;
+      &.current {
+        background-color: #e7e7e7;
+      }
+      &.logout {
+        position: relative;
+        &::before {
+          @include set-pseudo("../../public/img/ico_logout.webp", 18px, 20px);
+          left: 0.5em;
+        }
+      }
+      &.admin {
+        font-weight: bold;
+      }
+    }
+    &__link {
+      color: #8a8686;
+      &.logout {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}

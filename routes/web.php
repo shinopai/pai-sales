@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 // root
 Route::get('/', function () {
     return view('index');
-});
+})->name('index');
 
 Route::middleware('auth')->group(function () {
     // 売上管理
