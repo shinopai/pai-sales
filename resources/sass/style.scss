@@ -124,3 +124,49 @@
     }
   }
 }
+
+/* 検索エリア */
+.search {
+  @include set-border(1px, solid, #eaeaea);
+  border-radius: 10px;
+  &__heading {
+    background-color: #f5f5f5;
+    font-size: 1.8rem;
+    font-weight: normal;
+    padding: 0.3em 0.5em;
+    border-radius: 10px 10px 0 0;
+  }
+  &-form {
+    padding: 15px 20px;
+    align-items: center;
+    column-gap: 20px;
+    &__label {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+    &__input,
+    &__select,
+    &__btn {
+      @include set-border(1px, solid, #e8e8e8);
+      font-size: 1.2rem;
+      border-radius: 5px;
+      padding: 0.3em 0;
+    }
+    &__input {
+      width: 110px;
+    }
+    &__btn {
+      background-color: inherit;
+      width: 100px;
+      cursor: pointer;
+      &-wrap {
+        position: relative;
+        display: inline-block;
+        &::before {
+          @include set-pseudo("../../public/img/ico_search.webp", 15px, 15px);
+          left: 15px;
+        }
+      }
+    }
+  }
+}
