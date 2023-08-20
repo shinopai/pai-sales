@@ -12,12 +12,14 @@
       <div class="search-form__item">
         <label for="store_id" class="search-form__label">店舗</label>
         <select name="store_id" id="store_id" class="search-form__select">
+          @foreach(\App\Models\Store::all() as $store)
+          <option value="{{ $store->id }}">{{ $store->name }}</option>
+          @endforeach
         </select>
       </div>
       <div class="search-form__item">
-        <label for="item_id" class="search-form__label">商品</label>
-        <select name="item_id" id="item_id" class="search-form__select">
-        </select>
+        <label for="item_name" class="search-form__label">商品</label>
+        <input type="text" name="item_name" id="item_name" class="search-form__input text">
       </div>
       <div class="search-form__item">
         <div class="search-form__btn-wrap">
