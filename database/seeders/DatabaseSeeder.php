@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         // $this->call(StoreTableSeeder::class);
         // $this->call(ItemTableSeeder::class);
-        $this->call(CustomerTableSeeder::class);
+        // $this->call(CustomerTableSeeder::class);
+        $this->call(PerformanceTableSeeder::class);
     }
 }
