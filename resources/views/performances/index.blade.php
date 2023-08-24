@@ -29,4 +29,39 @@
       </div>
     </form>
   </div>
+
+  <div class="upper flex">
+    <div class="upper-btns flex">
+      <a href="" class="upper-btns__btn create">新規作成</a>
+      <a href="" class="upper-btns__btn edit">編集</a>
+      <a href="" class="upper-btns__btn delete">削除</a>
+    </div>
+    <div class="upper-numbers flex">
+      <span class="upper-numbers__sum">合計&nbsp;</span>
+      <span class="upper-numbers__total">{{ $performances->total() }}&nbsp;件</span>
+    </div>
+  </div>
+
+  <table class="table">
+    <tr>
+      <th>日付</th>
+      <th>店舗</th>
+      <th>商品</th>
+      <th>単価</th>
+      <th>個数</th>
+      <th>金額</th>
+    </tr>
+    @foreach($performances as $performance)
+    <tr>
+      <td>{{ \Carbon\Carbon::parse($performance->sales_date)->format('Y/m/d H:m') }}</td>
+      <td>{{ $performance->store->name }}</td>
+      <td>{{ $performance->item->name }}</td>
+      <td>{{ number_format($performance->item->price) }}</td>
+      <td>{{ $performance->quantity }}</td>
+      <td>{{ Functions::getTotalAmount($performance->item->price, $performance->quantity) }}</td>
+    </tr>
+    @endforeach
+  </table>
+
+  {{ $performances->links('vendor.pagination.default') }}
 </x-app-layout>
