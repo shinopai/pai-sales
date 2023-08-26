@@ -25,6 +25,12 @@ Route::middleware('auth')->group(function () {
         // 一覧画面
         Route::get('/', [App\Http\Controllers\Performance\IndexController::class, 'index'])->name('index');
     });
+
+    // 顧客管理
+    Route::prefix('customers')->name('customers.')->group(function () {
+        // 一覧画面
+        Route::get('/', [App\Http\Controllers\Customer\IndexController::class, 'index'])->name('index');
+    });
 });
 
 require __DIR__.'/auth.php';

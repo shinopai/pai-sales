@@ -6,8 +6,8 @@
         <li @class(["header-nav__item", "current"=> Functions::isCurrentPage(url()->current(), 'performances') !== false])>
           <a href="{{ route('performances.index') }}" class="header-nav__link">売上管理</a>
         </li>
-        <li class="header-nav__item">
-          <a href="{{ route('performances.index') }}" class="header-nav__link">顧客管理</a>
+        <li @class(["header-nav__item", "current"=> Functions::isCurrentPage(url()->current(), 'customers') !== false])>
+          <a href="{{ route('customers.index') }}" class="header-nav__link">顧客管理</a>
         </li>
         <li class="header-nav__item">
           <a href="{{ route('performances.index') }}" class="header-nav__link">売れ筋商品</a>

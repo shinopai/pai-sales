@@ -250,6 +250,7 @@
     @include set-border(1px, solid, #2e2f85);
     font-size: 1.6rem;
     padding: 0.2em 0.8em;
+    word-break: break-all;
   }
 }
 
