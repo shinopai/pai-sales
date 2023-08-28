@@ -212,22 +212,6 @@
           top: calc(50% - 22px / 2);
         }
       }
-      &.edit {
-        background-color: #1b1c80;
-        &::before {
-          @include set-pseudo("../../public/img/ico_edit.webp", 21px, 21px);
-          left: 0.5em;
-          top: calc(50% - 22px / 2);
-        }
-      }
-      &.delete {
-        background-color: #d9534f;
-        &::before {
-          @include set-pseudo("../../public/img/ico_delete.webp", 21px, 21px);
-          left: 0.5em;
-          top: calc(50% - 22px / 2);
-        }
-      }
     }
   }
   &-numbers {
@@ -267,6 +251,32 @@
     font-size: 1.6rem;
     padding: 0.2em 0.8em;
     word-break: break-all;
+    .flex {
+      column-gap: 15px;
+    }
+  }
+  &__btn {
+    color: #fff;
+    border-radius: 5px;
+    padding: 0.3em 1.5em 0.3em 2em;
+    position: relative;
+    font-size: 1.6rem;
+    &.edit {
+      background-color: #1b1c80;
+      &::before {
+        @include set-pseudo("../../public/img/ico_edit.webp", 21px, 21px);
+        left: 0.5em;
+        top: calc(50% - 22px / 2);
+      }
+    }
+    &.delete {
+      background-color: #d9534f;
+      &::before {
+        @include set-pseudo("../../public/img/ico_delete.webp", 21px, 21px);
+        left: 0.5em;
+        top: calc(50% - 22px / 2);
+      }
+    }
   }
 }
 

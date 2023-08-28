@@ -33,8 +33,6 @@
   <div class="upper flex">
     <div class="upper-btns flex">
       <a href="{{ route('performances.create.index') }}" class="upper-btns__btn create">新規作成</a>
-      <a href="" class="upper-btns__btn edit">編集</a>
-      <a href="" class="upper-btns__btn delete">削除</a>
     </div>
     <div class="upper-numbers flex">
       <span class="upper-numbers__sum">合計&nbsp;</span>
@@ -55,6 +53,7 @@
       <th>単価</th>
       <th>個数</th>
       <th>金額</th>
+      <th></th>
     </tr>
     @foreach($performances as $performance)
     <tr>
@@ -64,6 +63,12 @@
       <td>{{ number_format($performance->item->price) }}</td>
       <td>{{ $performance->quantity }}</td>
       <td>{{ Functions::getTotalAmount($performance->item->price, $performance->quantity) }}</td>
+      <td>
+        <div class="flex">
+          <a href="" class="table__btn edit">編集</a>
+          <a href="" class="table__btn delete">削除</a>
+        </div>
+      </td>
     </tr>
     @endforeach
   </table>
