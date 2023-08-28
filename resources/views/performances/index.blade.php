@@ -32,7 +32,7 @@
 
   <div class="upper flex">
     <div class="upper-btns flex">
-      <a href="" class="upper-btns__btn create">新規作成</a>
+      <a href="{{ route('performances.create.index') }}" class="upper-btns__btn create">新規作成</a>
       <a href="" class="upper-btns__btn edit">編集</a>
       <a href="" class="upper-btns__btn delete">削除</a>
     </div>
@@ -41,6 +41,11 @@
       <span class="upper-numbers__total">{{ $performances->total() }}&nbsp;件</span>
     </div>
   </div>
+
+  <!-- フラッシュメッセージ -->
+  @if (session('flash'))
+  <p class="flash-msg">{{ session('flash') }}</p>
+  @endif
 
   <table class="table">
     <tr>

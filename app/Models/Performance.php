@@ -11,6 +11,19 @@ class Performance extends Model
     use HasFactory;
 
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<int, string>
+     */
+    protected $fillable = [
+        'sales_date',
+        'quantity',
+        'customer_id',
+        'store_id',
+        'item_id'
+    ];
+
+    /**
      * relation
      */
     public function customer(): BelongsTo
