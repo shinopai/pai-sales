@@ -30,6 +30,12 @@ Route::middleware('auth')->group(function () {
 
         // 新規売上作成
         Route::post('/create/submit', [App\Http\Controllers\Performance\CreateController::class, 'submit'])->name('create.submit');
+
+        // 売上データ編集画面
+        Route::get('/edit/{performance}', [App\Http\Controllers\Performance\EditController::class, 'index'])->name('edit.index');
+
+        // 売上データ更新
+        Route::patch('/edit/submit/{performance}', [App\Http\Controllers\Performance\EditController::class, 'submit'])->name('edit.submit');
     });
 
     // 顧客管理

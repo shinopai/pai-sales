@@ -65,7 +65,7 @@
       <td>{{ Functions::getTotalAmount($performance->item->price, $performance->quantity) }}</td>
       <td>
         <div class="flex">
-          <a href="" class="table__btn edit">編集</a>
+          <a href="{{ route('performances.edit.index', ['performance' => $performance->id]) }}" class="table__btn edit">編集</a>
           <a href="" class="table__btn delete">削除</a>
         </div>
       </td>
