@@ -66,7 +66,7 @@
       <td>
         <div class="flex">
           <a href="{{ route('performances.edit.index', ['performance' => $performance->id]) }}" class="table__btn edit">編集</a>
-          <a href="" class="table__btn delete">削除</a>
+          <a href="{{ route('performances.delete.confirm', ['performance' => $performance->id]) }}" class="table__btn delete iframe">削除</a>
         </div>
       </td>
     </tr>
@@ -74,4 +74,6 @@
   </table>
 
   {{ $performances->links('vendor.pagination.default') }}
+
+  <script src="{{ asset('js/modaal/main.js') }}"></script>
 </x-app-layout>

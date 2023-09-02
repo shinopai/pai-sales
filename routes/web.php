@@ -36,6 +36,17 @@ Route::middleware('auth')->group(function () {
 
         // 売上データ更新
         Route::patch('/edit/submit/{performance}', [App\Http\Controllers\Performance\EditController::class, 'submit'])->name('edit.submit');
+
+        // 売上データ削除確認画面
+        Route::get('/delete/confirm/{performance}', [App\Http\Controllers\Performance\DeleteController::class, 'confirm'])->name('delete.confirm');
+
+        // 売上データ削除
+        Route::delete('/delete/submit/{performance}', [App\Http\Controllers\Performance\DeleteController::class, 'submit'])->name('delete.submit');
+
+        // 売上データ削除完了画面
+        Route::get('/delete/complete', function () {
+            return view('performances.delete.complete');
+        })->name('delete.complete');
     });
 
     // 顧客管理

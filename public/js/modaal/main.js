@@ -1,0 +1,3 @@
+$(".iframe").modaal({
+    type: "iframe",
+});

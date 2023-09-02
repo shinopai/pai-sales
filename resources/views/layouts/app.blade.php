@@ -14,6 +14,15 @@
 
   <!-- Scripts -->
   @vite(['resources/sass/style.scss', 'resources/js/app.js'])
+
+  <!-- modaal css -->
+  <link rel="stylesheet" href="{{ asset('css/modaal/modaal.min.css') }}">
+
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+  <!-- modaal script -->
+  <script src="{{ asset('js/modaal/modaal.min.js') }}"></script>
 </head>
 
 <body>
