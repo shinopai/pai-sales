@@ -54,6 +54,13 @@ Route::middleware('auth')->group(function () {
         // 一覧画面
         Route::get('/', [App\Http\Controllers\Customer\IndexController::class, 'index'])->name('index');
     });
+
+    // 売れ筋商品
+    Route::prefix('ranking')->name('ranking.')->group(function () {
+
+        // 商品別販売数
+        Route::get('/', [App\Http\Controllers\Ranking\IndexController::class, 'index'])->name('index');
+    });
 });
 
 require __DIR__.'/auth.php';

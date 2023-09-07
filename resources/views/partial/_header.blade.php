@@ -9,8 +9,8 @@
         <li @class(["header-nav__item", "current"=> Functions::isCurrentPage(url()->current(), 'customers') !== false])>
           <a href="{{ route('customers.index') }}" class="header-nav__link">顧客管理</a>
         </li>
-        <li class="header-nav__item">
-          <a href="{{ route('performances.index') }}" class="header-nav__link">売れ筋商品</a>
+        <li @class(["header-nav__item", "current"=> Functions::isCurrentPage(url()->current(), 'ranking') !== false])>
+          <a href="{{ route('ranking.index') }}" class="header-nav__link">売れ筋商品</a>
         </li>
         <li class="header-nav__item logout">
           <form method="POST" action="{{ route('logout') }}">
