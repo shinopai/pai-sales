@@ -8,6 +8,10 @@
   min-height: 100vh;
   &__inner {
     column-gap: 20px;
+    @include mq(w-520) {
+      flex-direction: column;
+      row-gap: 20px;
+    }
   }
   &__btn {
     background-color: #1b1c80;
@@ -100,10 +104,22 @@
 .header {
   background-color: #f8f8f8;
   height: 50px;
+  @include mq(w-768) {
+    height: initial;
+  }
   &__inner {
     justify-content: flex-start;
     align-items: center;
     column-gap: 170px;
+    @include mq(w-1024) {
+      column-gap: 25px;
+    }
+    @include mq(w-768) {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 10px 0;
+      row-gap: 10px;
+    }
   }
   &__heading {
     font-size: 2rem;
@@ -113,11 +129,18 @@
     height: 50px;
     align-items: center;
     font-size: 1.4rem;
+    @include mq(w-768) {
+      height: initial;
+      row-gap: 10px;
+    }
     &__item {
       padding: 0 2em;
       color: #8a8686;
       height: 100%;
       @include centering;
+      @include mq(w-1024) {
+        padding: 0 1em;
+      }
       &.current {
         background-color: #e7e7e7;
       }
@@ -126,6 +149,9 @@
         &::before {
           @include set-pseudo("../../public/img/ico_logout.webp", 18px, 20px);
           left: 0.5em;
+        }
+        @include mq(w-1024) {
+          padding: 0 1.8em;
         }
       }
       &.admin {
@@ -156,6 +182,7 @@
     padding: 15px 20px;
     align-items: center;
     column-gap: 20px;
+    row-gap: 10px;
     &__label {
       font-size: 1.2rem;
       font-weight: bold;
@@ -231,8 +258,16 @@
 
 /* テーブル */
 .table {
+  &-wrap {
+    width: 100%;
+    margin: 0 auto;
+    @include mq(w-960) {
+      overflow-x: scroll;
+    }
+  }
   margin-top: 20px;
   border-collapse: collapse;
+  min-width: 800px;
   tr {
     &:nth-child(even) {
       background-color: #f9f9f9;
@@ -253,6 +288,7 @@
     word-break: break-all;
     .flex {
       column-gap: 15px;
+      row-gap: 10px;
     }
   }
   &__btn {

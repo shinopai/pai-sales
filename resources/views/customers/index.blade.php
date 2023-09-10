@@ -29,36 +29,38 @@
     </div>
   </div>
 
-  <table class="table">
-    <tr>
-      <th>会員番号</th>
-      <th>名前</th>
-      <th>性別</th>
-      <th>誕生日</th>
-      <th>郵便</th>
-      <th>住所</th>
-      <th>電話番号</th>
-      <th>最終購入日</th>
-      <th>購入合計</th>
-    </tr>
-    @foreach($customers as $customer)
-    <tr>
-      <td>{{ $customer->membership_number }}</td>
-      <td>{{ $customer->name }}</td>
-      <td>{{ $customer->sex }}</td>
-      <td>
-        {{ $customer->birth_year }}/{{ $customer->birth_month
+  <div class="table-wrap">
+    <table class="table">
+      <tr>
+        <th>会員番号</th>
+        <th>名前</th>
+        <th>性別</th>
+        <th>誕生日</th>
+        <th>郵便</th>
+        <th>住所</th>
+        <th>電話番号</th>
+        <th>最終購入日</th>
+        <th>購入合計</th>
+      </tr>
+      @foreach($customers as $customer)
+      <tr>
+        <td>{{ $customer->membership_number }}</td>
+        <td>{{ $customer->name }}</td>
+        <td>{{ $customer->sex }}</td>
+        <td>
+          {{ $customer->birth_year }}/{{ $customer->birth_month
 
-        }}/{{ $customer->birth_day }}
-      </td>
-      <td>{{ substr_replace($customer->zip, '-', 3, 0) }}</td>
-      <td>{{ $customer->address }}</td>
-      <td>{{ $customer->tel }}</td>
-      <td>{{ Functions::getLastPurchaseDate($customer->id) }}</td>
-      <td>{{ Functions::getTotalPurchasePrice($customer->id) }}</td>
-    </tr>
-    @endforeach
-  </table>
+          }}/{{ $customer->birth_day }}
+        </td>
+        <td>{{ substr_replace($customer->zip, '-', 3, 0) }}</td>
+        <td>{{ $customer->address }}</td>
+        <td>{{ $customer->tel }}</td>
+        <td>{{ Functions::getLastPurchaseDate($customer->id) }}</td>
+        <td>{{ Functions::getTotalPurchasePrice($customer->id) }}</td>
+      </tr>
+      @endforeach
+    </table>
+  </div>
 
   {{ $customers->links('vendor.pagination.default') }}
 </x-app-layout>

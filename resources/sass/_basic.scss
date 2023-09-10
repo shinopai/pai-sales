@@ -89,6 +89,7 @@ table {
 
 /* breakpoints */
 $breakpoints: (
+  "w-1024": "screen and (max-width: 1024px)",
   "w-960": "screen and (max-width: 960px)",
   "w-768": "screen and (max-width: 768px)",
   "w-520": "screen and (max-width: 520px)",
