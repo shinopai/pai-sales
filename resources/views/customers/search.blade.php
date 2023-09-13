@@ -54,6 +54,7 @@
 
 
 
+
           }}/{{ $customer->birth_day }}
         </td>
         <td>{{ substr_replace($customer->zip, '-', 3, 0) }}</td>
@@ -66,5 +67,5 @@
     </table>
   </div>
 
-  {{ $customers->links('vendor.pagination.default') }}
+  {{ $customers->appends(request()->query())->links('vendor.pagination.default') }}
 </x-app-layout>

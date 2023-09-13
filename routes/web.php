@@ -47,12 +47,18 @@ Route::middleware('auth')->group(function () {
         Route::get('/delete/complete', function () {
             return view('performances.delete.complete');
         })->name('delete.complete');
+
+        // 売上データ検索
+        Route::get('/search', [App\Http\Controllers\Performance\IndexController::class, 'search'])->name('search');
     });
 
     // 顧客管理
     Route::prefix('customers')->name('customers.')->group(function () {
         // 一覧画面
         Route::get('/', [App\Http\Controllers\Customer\IndexController::class, 'index'])->name('index');
+
+        // 顧客データ検索
+        Route::get('/search', [App\Http\Controllers\Customer\IndexController::class, 'search'])->name('search');
     });
 
     // 売れ筋商品

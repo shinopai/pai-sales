@@ -31,25 +31,17 @@
         <div class="search-form__btn-wrap">
           <input type="submit" value="検索" class="search-form__btn" />
         </div>
-        <input type="reset" value="キャンセル" class="search-form__btn" />
+        <input type="button" value="キャンセル" class="search-form__btn" />
       </div>
     </form>
   </div>
 
   <div class="upper flex">
-    <div class="upper-btns flex">
-      <a href="{{ route('performances.create.index') }}" class="upper-btns__btn create">新規作成</a>
-    </div>
     <div class="upper-numbers flex">
       <span class="upper-numbers__sum">合計&nbsp;</span>
       <span class="upper-numbers__total">{{ $performances->total() }}&nbsp;件</span>
     </div>
   </div>
-
-  <!-- フラッシュメッセージ -->
-  @if (session('flash'))
-  <p class="flash-msg">{{ session("flash") }}</p>
-  @endif
 
   <div class="table-wrap">
     <table class="table">
@@ -85,7 +77,7 @@
     </table>
   </div>
 
-  {{ $performances->links('vendor.pagination.default') }}
+  {{ $performances->appends(request()->query())->links('vendor.pagination.default') }}
 
   <script src="{{ asset('js/modaal/main.js') }}"></script>
 </x-app-layout>

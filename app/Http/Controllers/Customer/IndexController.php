@@ -14,4 +14,11 @@ class IndexController extends Controller
 
         return view('customers.index', compact('customers'));
     }
+
+    public function search(Request $request)
+    {
+        $customers = Customer::where('name', 'LIKE', '%'.$request->input('name').'%')->paginate(10);
+
+        return view('customers.search', compact('customers'));
+    }
 }
